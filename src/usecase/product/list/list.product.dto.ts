@@ -8,5 +8,5 @@ type Product = {
   price: number;
 };
 export interface OutputListProductDto {
-  products: ProductInterface[];
+  products: Omit<ProductInterface, "changeName" | "changePrice">[];
 }

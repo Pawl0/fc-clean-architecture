@@ -1,9 +1,9 @@
-import ProductRepository from "../../../infrastructure/product/repository/sequelize/product.repository";
+import ProductRepositoryInterface from "../../../domain/product/repository/product-repository.interface";
 import { InputFindProductDto, OutputFindProductDto } from "./find.product.dto";
 
 export default class FindProductUseCase {
 
-  constructor(private readonly productRepository: ProductRepository) {}
+  constructor(private readonly productRepository: ProductRepositoryInterface) {}
 
   async execute(input: InputFindProductDto): Promise<OutputFindProductDto> {
     const product = await this.productRepository.find(input.id);

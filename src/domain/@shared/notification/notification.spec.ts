@@ -1,20 +1,20 @@
 import Notification from "./notification";
 
-describe("Unit testss for notifications", () => {
+describe("Unit tests for notifications", () => {
+
   it("should create errors", () => {
     const notification = new Notification();
     const error = {
       message: "error message",
-      context: "customer",
+      context: "customer"
     };
-
     notification.addError(error);
 
     expect(notification.messages("customer")).toBe("customer: error message,");
 
     const error2 = {
       message: "error message2",
-      context: "customer",
+      context: "customer"
     };
     notification.addError(error2);
 
@@ -24,7 +24,7 @@ describe("Unit testss for notifications", () => {
 
     const error3 = {
       message: "error message3",
-      context: "order",
+      context: "order"
     };
     notification.addError(error3);
 
@@ -40,7 +40,7 @@ describe("Unit testss for notifications", () => {
     const notification = new Notification();
     const error = {
       message: "error message",
-      context: "customer",
+      context: "customer"
     };
     notification.addError(error);
 
@@ -51,10 +51,11 @@ describe("Unit testss for notifications", () => {
     const notification = new Notification();
     const error = {
       message: "error message",
-      context: "customer",
+      context: "customer"
     };
     notification.addError(error);
 
     expect(notification.getErrors()).toEqual([error]);
   });
+
 });
